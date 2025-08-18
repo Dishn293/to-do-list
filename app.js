@@ -53,7 +53,7 @@ listElement.onclick = function(event) {
 
 function getNoteTemplate (note, index) {
     return `
-    <ul class="list-group list-group-flush" id="list" style="border-bottom-style:solid;border-color:black;border-width: 2px;">
+    <ul class="list-group list-group-flush" id="list" style="border-radius: 10px; margin-top:10px;">
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <span class='${note.completed ? 'text-decoration-line-through' : ''}'>${note.title}</span>
                 <span>
