@@ -1,0 +1,38 @@
+.container {
+  width: 50%;
+  padding-top: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+span {
+  font-size: 20px;
+}
+
+#list {
+  border-width: 2px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .btn-small {
+    display: block;
+  }
+
+  .btn-danger {
+    margin-top: 1rem;
+  }
+
+  span {
+    font-size: 16px;
+  }
+}

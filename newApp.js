@@ -6,7 +6,7 @@ const createBtn = document.getElementById('create')
 const listElement = document.getElementById('list')
 const deleteBtn = document.getElementById('delete')
 const localStorageDelete = document.getElementById('localStorageDelete')
-
+const deleteWorkedBtn = document.getElementById('deleteWorked')
 
 function saveToLocalStorage() {
     localStorage.setItem('notes', JSON.stringify(notes))
@@ -48,7 +48,7 @@ function getNoteTemplate (note, index) {
     return `
     <ul class="list-group list-group-flush" id="list" style="border-radius: 10px; margin-top:10px;">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class='${note.completed ? 'text-decoration-line-through' : ''}'>${note.title}</span>
+                <span class='${note.completed ? 'text-decoration-line-through opacity-25' : ''}'>${note.title}</span>
                 <span>
                     <span class="btn btn-small btn-${note.completed ? 'warning' : 'success'}" data-index="${index}" data-type="toggle">✓</span>
                     <span class="btn btn-small btn-danger" data-index="${index}" data-type="remove">×</span>
@@ -87,8 +87,17 @@ createBtn.onclick = function() {
     inputElement.value = ''
 }
 
-deleteBtn.onclick = function () {
+deleteBtn.onclick = function() {
     notes.length = 0
     saveToLocalStorage()
+    render()
+}
+
+deleteWorkedBtn.onclick = function() {
+    for (let i = notes.length - 1; i >= 0; i--) {
+        if (notes[i].completed === true) {
+            notes.splice(i, 1)
+        }
+    }
     render()
 }

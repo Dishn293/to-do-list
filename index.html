@@ -4,47 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <!-- <script src="theory.js" defer></script> -->
     <!-- <script src="app.js" defer></script> -->
-     <script src="newApp.js" defer></script>
-    <title>Document</title>
-
-    <style>
-        .container {
-            width: 50%;
-            padding-top: 1rem;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        span {
-            font-size: 20px;
-        }
-
-        @media(max-width: 480px) {
-            .container {
-                width: 100%;
-            }
-
-            h1 {
-                text-align: center;
-            }
-
-            .btn-small {
-                display: block;
-            }
-
-            .btn-danger {
-                margin-top: 1rem;
-            }
-
-            span {
-                font-size: 16px;
-            }
-        }
-    </style>
-
+    <link rel="stylesheet" href="main.css"> 
+    <script src="newApp.js" defer></script>
+    <title>Заметки</title>
 </head>
 <body class="bg-dark text-light">
     
@@ -58,10 +22,10 @@
         
         <button class="btn btn-outline-success w-100 mb-2" id="create">Добавить</button>
         <button class="btn btn-outline-danger w-100 mb-2" id="delete">Удалить все заметки</button>
+        <button class="btn btn-outline-warning w-100 mb-2" id="deleteWorked">Удалить выполенные заметки</button>
         
 
-        <ul class="list-group list-group-flush" id="list" style="border-width: 2px;">
-            <!-- word-wrap: break-word;white-space: pre-wrap; -->
+        <ul class="list-group list-group-flush" id="list">
         </ul>
     </div>
 
